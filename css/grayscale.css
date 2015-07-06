@@ -374,3 +374,7 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
+
+ul.list-inline.marginBt li {
+    margin-bottom: 10px;
+}
