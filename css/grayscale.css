@@ -378,3 +378,7 @@ body {
 ul.list-inline.marginBt li {
     margin-bottom: 10px;
 }
+
+.nomal-transform {
+    text-transform: none;
+}
