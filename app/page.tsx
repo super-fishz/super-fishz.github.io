@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown, MoveRight, Linkedin, Twitter, Instagram, Github, Pencil, HelpCircle } from "lucide-react"
+import { ChevronDown, MoveRight, Linkedin, Twitter, Instagram, Github, Pencil, HelpCircle, Menu } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
 
 export default function Component() {
   return (
@@ -17,7 +19,7 @@ export default function Component() {
               <div className="w-8 h-8" >
                 <Image src="/static/lg2.png" alt="Core-a TNG Logo" width={112} height={112} />
 	      </div>
-              <span className="text-lg font-thin tracking-wider font-bitcount">CORE-A TNG</span>
+              <span className="text-lg font-light tracking-wider font-bitcount">CORE-A TNG</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
               <Link href="#" className="hover:text-orange-500 transition-colors" prefetch={false}>
@@ -30,6 +32,33 @@ export default function Component() {
                 Team
               </Link>
             </nav>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden hover:bg-orange-900/50">
+                  <Menu className="h-6 w-6 text-gray-50" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-neutral-950/50 backdrop-blur-sm border-l-neutral-800 text-gray-50">
+                <div className="grid gap-6 p-6">
+                  <SheetClose asChild>
+                    <Link href="#" className="text-lg font-medium hover:text-orange-500 transition-colors" prefetch={false}>
+                      /
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link href="#about" className="text-lg font-medium hover:text-orange-500 transition-colors" prefetch={false}>
+                      About Us
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link href="#team" className="text-lg font-medium hover:text-orange-500 transition-colors" prefetch={false}>
+                      Team
+                    </Link>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
           </header>
           <div className="relative z-20 flex flex-col items-center justify-center text-center space-y-6 px-4">
             <div className="flex items-center gap-6">
